@@ -15,6 +15,8 @@
                 });
             }
 
+            app.ConfigureCustomAuditMiddleware();
+
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
