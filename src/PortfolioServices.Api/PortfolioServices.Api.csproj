@@ -11,12 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PortfolioServices.Context\PortfolioServices.Context.csproj" />
     <ProjectReference Include="..\PortfolioServices.Profiles\PortfolioServices.Profiles.csproj" />
   </ItemGroup>
 
-
   <ItemGroup>
-		<Protobuf Include="..\protos\*.proto" GrpcServices="Server" Link="...\protos\*.proto"  OutputDir="%(RelativePath)/models" />
+    <Folder Include="BussinessObject\Interfaces\" />
   </ItemGroup>
 
 </Project>

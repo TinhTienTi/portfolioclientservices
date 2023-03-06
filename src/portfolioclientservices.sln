@@ -5,13 +5,15 @@ VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioServices.Api", "PortfolioServices.Api\PortfolioServices.Api.csproj", "{15CFA58D-D68D-4B32-89AB-3DAF7679F36B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioServices.Model", "PortfolioServices.Model\PortfolioServices.Model.csproj", "{D591AF65-FA4B-4BE6-A15C-000F889A8309}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioServices.Model", "PortfolioServices.Model\PortfolioServices.Model.csproj", "{D591AF65-FA4B-4BE6-A15C-000F889A8309}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioServices.Dto", "PortfolioServices.Dto\PortfolioServices.Dto.csproj", "{0842CF9A-7072-4489-B415-A8E2463F92E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioServices.Dto", "PortfolioServices.Dto\PortfolioServices.Dto.csproj", "{0842CF9A-7072-4489-B415-A8E2463F92E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioServices.Profiles", "PortfolioServices.Profiles\PortfolioServices.Profiles.csproj", "{D4AB11E8-DBCD-4982-88B8-1E6FFA1F5B30}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioServices.Profiles", "PortfolioServices.Profiles\PortfolioServices.Profiles.csproj", "{D4AB11E8-DBCD-4982-88B8-1E6FFA1F5B30}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioServices.Client", "PortfolioServices.Client\PortfolioServices.Client.csproj", "{EBB9BE8D-2BF6-4512-88CB-261DD8077F4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioServices.Context", "PortfolioServices.Context\PortfolioServices.Context.csproj", "{E6E1808A-1119-4C3C-AB46-D53AEBEE83B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{EBB9BE8D-2BF6-4512-88CB-261DD8077F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBB9BE8D-2BF6-4512-88CB-261DD8077F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBB9BE8D-2BF6-4512-88CB-261DD8077F4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6E1808A-1119-4C3C-AB46-D53AEBEE83B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6E1808A-1119-4C3C-AB46-D53AEBEE83B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6E1808A-1119-4C3C-AB46-D53AEBEE83B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6E1808A-1119-4C3C-AB46-D53AEBEE83B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
