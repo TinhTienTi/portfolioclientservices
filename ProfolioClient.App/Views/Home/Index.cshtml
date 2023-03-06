@@ -1,0 +1,158 @@
+﻿@using ProfolioClient.App
+@using ProfolioClient.App.Models
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Profolio</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link href="~/css/meyawo.css" rel="stylesheet" asp-append-version="true" />
+
+    <link rel="stylesheet" href="~/ProfolioClient.App.styles.css" asp-append-version="true" />
+
+    <link href="~/themify-icons/css/themify-icons.css" rel="stylesheet" />
+
+    <style>
+        #myBtn {
+            display: none; /* Hidden by default */
+            position: fixed; /* Fixed/sticky position */
+            bottom: 20px; /* Place the button at the bottom of the page */
+            right: 30px; /* Place the button 30px from the right */
+            z-index: 99; /* Make sure it does not overlap */
+            border: none; /* Remove borders */
+            outline: none; /* Remove outline */
+            background-color: red; /* Set a background color */
+            color: white; /* Text color */
+            cursor: pointer; /* Add a mouse pointer on hover */
+            padding: 15px; /* Some padding */
+            border-radius: 10px; /* Rounded corners */
+            font-size: 18px; /* Increase font size */
+            display: block;
+        }
+
+            #myBtn:hover {
+                background-color: #555; /* Add a dark-grey background on hover */
+            }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- Page Navbar -->
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="logo" href="#">Meyawo</a>
+        </div>
+    </nav><!-- End of Page Navbar -->
+    <!-- page header -->
+    <header id="home" class="header">
+        <div class="overlay"></div>
+        <div class="header-content container">
+            <h1 class="header-title">
+                <span class="up">HI!</span>
+                <span class="down">I am John Doe</span>
+            </h1>
+            <p class="header-subtitle">BACKEND WEBSITE OR WEBAPP</p>
+
+            <button class="btn btn-primary">Visit My Works</button>
+        </div>
+    </header><!-- end of page header -->
+    <!-- about section -->
+    <section class="section pt-0" id="about">
+        @{
+            await Html.RenderPartialAsync("_About");
+        }
+    </section> <!-- end of about section -->
+    <!-- service section -->
+    <section class="section" id="service">
+        @{
+            await Html.RenderPartialAsync("_Service");
+        }
+    </section><!-- end of service section -->
+    <!-- portfolio section -->
+    <section class="section" id="portfolio">
+        @{
+            await Html.RenderPartialAsync("_Portfolio");
+        }
+    </section>
+    <!-- end
+    </section> <!-- end of portfolio section -->
+    <!-- section -->
+    <section class="section-sm bg-primary">
+        <!-- container -->
+        <div class="container text-center text-sm-left">
+            <!-- row -->
+            <div class="row align-items-center">
+                <div class="col-sm offset-md-1 mb-4 mb-md-0">
+                    <h6 class="title text-light">Want to work with me?</h6>
+                    <p class="m-0 text-light">Always feel Free to Contact & Hire me</p>
+                </div>
+                <div class="col-sm offset-sm-2 offset-md-3">
+                    <button class="btn btn-lg my-font btn-light rounded">Hire Me</button>
+                </div>
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </section> <!-- end of section -->
+    <!-- testimonial section -->
+    <section class="section" id="testmonial">
+        @{
+            await Html.RenderPartialAsync("_Client");
+        }
+    </section> <!-- end of testimonial section -->
+    <!-- blog section -->
+    <section class="section" id="blog">
+        @{
+            await Html.RenderPartialAsync("_Blog");
+        }
+    </section><!-- end of blog section -->
+    <!-- contact section -->
+    <section class="section" id="contact">
+        @{
+            await Html.RenderPartialAsync("_Contact");
+        }
+    </section><!-- end of contact section -->
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <!-- footer -->
+    <div class="container">
+        <footer class="footer">
+            <p class="mb-0">&copy; 2023 - ProfolioClient.App - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></p>
+            <div class="social-links text-right m-auto ml-sm-auto">
+                <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
+                <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+            </div>
+        </footer>
+    </div> <!-- end of page footer -->
+
+    <script src="~/lib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        // Get the button:
+        let mybutton = document.getElementById("myBtn");
+        
+        function scrollFunction() {
+                mybutton.style.display = "block";         
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
+    @*@await RenderSectionAsync("Scripts", required: false)*@
+</body>
+</html>
