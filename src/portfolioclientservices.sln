@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioServices.Profiles"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioServices.Client", "PortfolioServices.Client\PortfolioServices.Client.csproj", "{EBB9BE8D-2BF6-4512-88CB-261DD8077F4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioServices.Context", "PortfolioServices.Context\PortfolioServices.Context.csproj", "{E6E1808A-1119-4C3C-AB46-D53AEBEE83B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioServices.Context", "PortfolioServices.Context\PortfolioServices.Context.csproj", "{E6E1808A-1119-4C3C-AB46-D53AEBEE83B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioServices.Repositories", "PortfolioServices.Repositories\PortfolioServices.Repositories.csproj", "{60175EBD-893A-4FF6-B744-7D5284763346}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{E6E1808A-1119-4C3C-AB46-D53AEBEE83B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6E1808A-1119-4C3C-AB46-D53AEBEE83B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6E1808A-1119-4C3C-AB46-D53AEBEE83B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60175EBD-893A-4FF6-B744-7D5284763346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60175EBD-893A-4FF6-B744-7D5284763346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60175EBD-893A-4FF6-B744-7D5284763346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60175EBD-893A-4FF6-B744-7D5284763346}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

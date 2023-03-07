@@ -1,6 +1,6 @@
-﻿namespace PortfolioServices.Model;
+﻿namespace PortfolioServices.Dto;
 
-public class Language
+public class LanguageDto
 {
     public Guid Tid { get; set; }
     public DateTimeOffset? CreatedAt { get; set; }

@@ -1,60 +1,53 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MongoDB.Bson;
-using PortfolioServices.Context.Interfaces;
-using PortfolioServices.Model;
+using PortfolioServices.Api.Bo.Interfaces;
+using PortfolioServices.Dto;
 
-namespace PortfolioServices.Api.Controllers;
-
-[Route("api/[controller]")]
-[ApiController]
-public class HomeController : ControllerBase
+namespace PortfolioServices.Api.Controllers
 {
-    private readonly IGenericDAL<Home> hr;
-
-    public HomeController(IGenericDAL<Home> hr)
+    [Route("api/[controller]")]
+    [ApiController]
+    public class HomeController : ControllerBase
     {
-        this.hr = hr;
-    }
+        private readonly IServiceProvider _serviceProvider;
+        private readonly IHomeBo homeBo;
 
-    // GET: api/<HomeController>
-    [HttpGet]
-    public async Task<IActionResult> Get()
-    {
-        return Ok(await hr.FindAllAsync());
-    }
+        public HomeController(IServiceProvider _serviceProvider)
+        {
+            this._serviceProvider = _serviceProvider;
+            homeBo = _serviceProvider.GetService<IHomeBo>();
+        }
 
-    // GET api/<HomeController>
-    [HttpGet]
-    [Route("GetById")]
-    public async Task<IActionResult> GetById([FromQuery]ObjectId id)
-    {
-        return Ok(await hr.FindByIdAsync(id));
-    }
+        // GET: api/<HomeController>
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            return Ok(await homeBo.GetHomeBoAsync());
+        }
 
-    // POST api/<HomeController>
-    [HttpPost]
-    public async Task<IActionResult> Post([FromBody] Home value)
-    {
-        await hr.CreateAsync(value);
+        // GET api/<HomeController>/5
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(Guid id)
+        {
+            return Ok(await homeBo.GetHomeBoAsync(id));
+        }
 
-        return StatusCode(201);
-    }
+        // POST api/<HomeController>
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] HomeDto value)
+        {
+            return Ok(await homeBo.CreateAsync(value));
+        }
 
-    // PUT api/<HomeController>
-    [HttpPut()]
-    public async Task<IActionResult> Put([FromBody] Home value)
-    {
-        await hr.UpdateAsync(value);
+        // PUT api/<HomeController>/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+        }
 
-        return Ok();
-    }
-
-    // DELETE api/<HomeController>/5
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(ObjectId id)
-    {
-        await hr.DeleteByIdAsync(id);
-
-        return Ok();
+        // DELETE api/<HomeController>/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
+        }
     }
 }

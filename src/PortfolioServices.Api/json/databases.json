@@ -1,0 +1,6 @@
+{
+  "PortfolioService": {
+    "Provider": "SqlServer",
+    "ConnectionString": "Server=DESKTOP-3DV7K6B;Database=Portfolio;"
+  }
+}

@@ -1,8 +1,10 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
+﻿using PortfolioServices.Api.Bo;
+using PortfolioServices.Api.Bo.Interfaces;
 using PortfolioServices.Context;
-using PortfolioServices.Context.Interfaces;
-using PortfolioServices.Model.Others;
+using PortfolioServices.Dto;
+using PortfolioServices.Model;
+using PortfolioServices.Repositories;
+using PortfolioServices.Repositories.Interfaces;
 
 namespace PortfolioServices.Api.Infracstructure
 {
@@ -10,27 +12,39 @@ namespace PortfolioServices.Api.Infracstructure
     {
         public static void AddConfigureServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddProfiles();
+            services.AddDbContexts();
 
-            services.AddMongoDbContext(configuration);
+            services.AddRepositories();
+
+            services.AddBo();
+
+            services.AddProfiles();
 
             services.AddApplicationControllers();
 
             services.AddSwagger();
         }
 
+        private static void AddDbContexts(this IServiceCollection services)
+        {
+            services.AddDbContext<PortfoliServicesContext>();
+        }
+
+        private static void AddRepositories(this IServiceCollection services)
+        {
+            services.AddScoped<IGenericRepository<Home, HomeDto>, GenericRepository<Home, HomeDto>>();
+            services.AddScoped<IGenericRepository<Language, LanguageDto>, GenericRepository<Language, LanguageDto>>();
+            services.AddScoped<IGenericRepository<Categories, CategoriesDto>, GenericRepository<Categories, CategoriesDto>>();
+        }
+
+        private static void AddBo(this IServiceCollection services)
+        {
+            services.AddScoped<IHomeBo, HomeBo>();
+        }
+
         private static void AddProfiles(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(PortfolioServices.Profiles.MappingProfile));
-        }
-
-        private static void AddMongoDbContext(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.Configure<MongoDbSettings>(configuration.GetSection("MongoConnection"));
-
-            services.AddScoped<IMongoDbSettings>(serviceProvider => serviceProvider.GetRequiredService<IOptions<MongoDbSettings>>().Value);
-
-            services.AddScoped(typeof(IGenericDAL<>), typeof(GenericDAL<>));
         }
 
         private static void AddApplicationControllers(this IServiceCollection services)

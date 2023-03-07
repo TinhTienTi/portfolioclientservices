@@ -1,6 +1,6 @@
-﻿namespace PortfolioServices.Model;
+﻿namespace PortfolioServices.Dto;
 
-public class Home
+public class HomeDto
 {
     public Guid Tid { get; set; }
     public DateTimeOffset? CreatedAt { get; set; }

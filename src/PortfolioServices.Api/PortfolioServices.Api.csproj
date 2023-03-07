@@ -11,12 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PortfolioServices.Context\PortfolioServices.Context.csproj" />
     <ProjectReference Include="..\PortfolioServices.Profiles\PortfolioServices.Profiles.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="BussinessObject\Interfaces\" />
+    <ProjectReference Include="..\PortfolioServices.Repositories\PortfolioServices.Repositories.csproj" />
   </ItemGroup>
 
 </Project>

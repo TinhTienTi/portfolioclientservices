@@ -10,6 +10,15 @@ namespace PortfolioServices.Profiles
         {
             CreateMap<WeatherForecastDto, WeatherForecast>();
             CreateMap<WeatherForecast, WeatherForecastDto>();
+
+            CreateMap<Categories, CategoriesDto>();
+            CreateMap<CategoriesDto, Categories>();
+
+            CreateMap<Home, HomeDto>();
+            CreateMap<HomeDto, Home>();
+
+            CreateMap<Language, LanguageDto>();
+            CreateMap<LanguageDto, Language>();
         }
     }
 }
