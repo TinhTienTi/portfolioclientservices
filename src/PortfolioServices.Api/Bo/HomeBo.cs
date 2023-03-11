@@ -24,7 +24,7 @@ namespace PortfolioServices.Api.Bo
             return await hr.GetAllAsync();
         }
 
-        public async Task<HomeDto> GetHomeBoAsync(Guid Tid)
+        public async Task<HomeDto> GetAsync(Guid Tid)
         {
             return await Task.FromResult(hr.GetById(Tid));
         }

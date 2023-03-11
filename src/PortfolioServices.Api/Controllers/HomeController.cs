@@ -28,7 +28,7 @@ namespace PortfolioServices.Api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(Guid id)
         {
-            return Ok(await homeBo.GetHomeBoAsync(id));
+            return Ok(await homeBo.GetAsync(id));
         }
 
         // POST api/<HomeController>

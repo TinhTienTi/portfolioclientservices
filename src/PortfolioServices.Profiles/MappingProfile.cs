@@ -14,8 +14,8 @@ namespace PortfolioServices.Profiles
             CreateMap<Categories, CategoriesDto>();
             CreateMap<CategoriesDto, Categories>();
 
-            CreateMap<Home, HomeDto>();
-            CreateMap<HomeDto, Home>();
+            CreateMap<Home, LanguageDto>();
+            CreateMap<LanguageDto, Home>();
 
             CreateMap<Language, LanguageDto>();
             CreateMap<LanguageDto, Language>();
