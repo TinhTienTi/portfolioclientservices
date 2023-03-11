@@ -27,18 +27,19 @@ public partial class PortfoliServicesContext : DbContext
     {
         modelBuilder.Entity<Categories>(entity =>
         {
-            entity.HasKey(e => e.Tid)
-                .HasName("PK__Categori__C451DB31389BBF3C");
+            entity.ToTable("Category");
+
+            entity.HasKey(e => e.Tid).HasName("PK__Categori__C451DB31389BBF3C");
 
             entity.Property(e => e.Tid).HasDefaultValueSql("(newid())");
 
-            entity.Property(e => e.Object)
-                .HasMaxLength(30)
-                .IsUnicode(false);
+            entity.Property(e => e.Object).HasMaxLength(30).IsUnicode(false);
         });
 
         modelBuilder.Entity<Home>(entity =>
         {
+            entity.ToTable("Home");
+
             entity.HasKey(e => e.Tid)
                 .HasName("PK__Home__C451DB313287FC55");
 
@@ -47,6 +48,8 @@ public partial class PortfoliServicesContext : DbContext
 
         modelBuilder.Entity<Language>(entity =>
         {
+            entity.ToTable("Language");
+
             entity.HasKey(e => e.Tid)
                 .HasName("PK__Language__C451DB31BE3A07D0");
 
