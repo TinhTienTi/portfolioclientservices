@@ -3,19 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioServices.Api", "PortfolioServices.Api\PortfolioServices.Api.csproj", "{15CFA58D-D68D-4B32-89AB-3DAF7679F36B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioServices.Model", "PortfolioServices.Model\PortfolioServices.Model.csproj", "{D591AF65-FA4B-4BE6-A15C-000F889A8309}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioServices.Dto", "PortfolioServices.Dto\PortfolioServices.Dto.csproj", "{0842CF9A-7072-4489-B415-A8E2463F92E4}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioServices.Profiles", "PortfolioServices.Profiles\PortfolioServices.Profiles.csproj", "{D4AB11E8-DBCD-4982-88B8-1E6FFA1F5B30}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioServices.Client", "PortfolioServices.Client\PortfolioServices.Client.csproj", "{EBB9BE8D-2BF6-4512-88CB-261DD8077F4E}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortfolioServices.Context", "PortfolioServices.Context\PortfolioServices.Context.csproj", "{E6E1808A-1119-4C3C-AB46-D53AEBEE83B2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PortfolioServices.Repositories", "PortfolioServices.Repositories\PortfolioServices.Repositories.csproj", "{60175EBD-893A-4FF6-B744-7D5284763346}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,34 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{15CFA58D-D68D-4B32-89AB-3DAF7679F36B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{15CFA58D-D68D-4B32-89AB-3DAF7679F36B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{15CFA58D-D68D-4B32-89AB-3DAF7679F36B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{15CFA58D-D68D-4B32-89AB-3DAF7679F36B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D591AF65-FA4B-4BE6-A15C-000F889A8309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D591AF65-FA4B-4BE6-A15C-000F889A8309}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D591AF65-FA4B-4BE6-A15C-000F889A8309}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D591AF65-FA4B-4BE6-A15C-000F889A8309}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0842CF9A-7072-4489-B415-A8E2463F92E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0842CF9A-7072-4489-B415-A8E2463F92E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0842CF9A-7072-4489-B415-A8E2463F92E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0842CF9A-7072-4489-B415-A8E2463F92E4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D4AB11E8-DBCD-4982-88B8-1E6FFA1F5B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4AB11E8-DBCD-4982-88B8-1E6FFA1F5B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4AB11E8-DBCD-4982-88B8-1E6FFA1F5B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4AB11E8-DBCD-4982-88B8-1E6FFA1F5B30}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EBB9BE8D-2BF6-4512-88CB-261DD8077F4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EBB9BE8D-2BF6-4512-88CB-261DD8077F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBB9BE8D-2BF6-4512-88CB-261DD8077F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBB9BE8D-2BF6-4512-88CB-261DD8077F4E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E6E1808A-1119-4C3C-AB46-D53AEBEE83B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E6E1808A-1119-4C3C-AB46-D53AEBEE83B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E6E1808A-1119-4C3C-AB46-D53AEBEE83B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E6E1808A-1119-4C3C-AB46-D53AEBEE83B2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{60175EBD-893A-4FF6-B744-7D5284763346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60175EBD-893A-4FF6-B744-7D5284763346}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{60175EBD-893A-4FF6-B744-7D5284763346}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{60175EBD-893A-4FF6-B744-7D5284763346}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
