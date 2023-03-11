@@ -1,0 +1,8 @@
+{
+  "Api": {
+    "Uri": "https://localhost:7037"
+  },
+  "ProfileUrl": {
+    "Home": "api/Profile" 
+  }
+}

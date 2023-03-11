@@ -1,7 +1,13 @@
+using PortfolioServices.Client.Infracstructure.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Host.ConfigureAppConfiguration(app => app.AddJsonFile(@"json/apiconfig.json", optional: false, reloadOnChange: true));
+
+builder.Services.AddConfigureServiceExtension();
 
 var app = builder.Build();
 
