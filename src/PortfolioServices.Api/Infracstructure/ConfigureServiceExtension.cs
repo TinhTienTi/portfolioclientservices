@@ -42,6 +42,8 @@ namespace PortfolioServices.Api.Infracstructure
             services.AddScoped<IHomeBo, HomeBo>();
             services.AddScoped<ILanguageBo, LanguageBo>();
             services.AddScoped<ICategoryBo, CategoryBo>();
+
+            services.AddScoped<IProfileBo, ProfileBo>();
         }
 
         private static void AddProfiles(this IServiceCollection services)
