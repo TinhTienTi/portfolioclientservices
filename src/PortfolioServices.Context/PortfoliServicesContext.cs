@@ -27,7 +27,7 @@ public partial class PortfoliServicesContext : DbContext
     {
         modelBuilder.Entity<Categories>(entity =>
         {
-            entity.ToTable("Category");
+            entity.ToTable("Categories");
 
             entity.HasKey(e => e.Tid).HasName("PK__Categori__C451DB31389BBF3C");
 
