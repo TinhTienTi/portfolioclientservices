@@ -2,23 +2,22 @@
 using PortfolioServices.Dto;
 using PortfolioServices.Model;
 
-namespace PortfolioServices.Profiles
+namespace PortfolioServices.Profiles;
+
+public class MappingProfile : Profile
 {
-    public class MappingProfile : Profile
+    public MappingProfile()
     {
-        public MappingProfile()
-        {
-            CreateMap<WeatherForecastDto, WeatherForecast>();
-            CreateMap<WeatherForecast, WeatherForecastDto>();
+        CreateMap<WeatherForecastDto, WeatherForecast>();
+        CreateMap<WeatherForecast, WeatherForecastDto>();
 
-            CreateMap<Categories, CategoriesDto>();
-            CreateMap<CategoriesDto, Categories>();
+        CreateMap<Categories, CategoriesDto>();
+        CreateMap<CategoriesDto, Categories>();
 
-            CreateMap<Home, LanguageDto>();
-            CreateMap<LanguageDto, Home>();
+        CreateMap<Home, HomeDto>();
+        CreateMap<HomeDto, Home>();
 
-            CreateMap<Language, LanguageDto>();
-            CreateMap<LanguageDto, Language>();
-        }
+        CreateMap<Language, LanguageDto>();
+        CreateMap<LanguageDto, Language>();
     }
 }

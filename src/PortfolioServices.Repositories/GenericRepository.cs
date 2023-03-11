@@ -117,7 +117,7 @@ public class GenericRepository<TEntity, TDto> : IGenericRepository<TEntity, TDto
     }
 
 
-    public TDto? GetById(Guid id)
+    public TDto GetById(Guid id)
     {
         var entity = context.Set<TEntity>().Find(id);
 

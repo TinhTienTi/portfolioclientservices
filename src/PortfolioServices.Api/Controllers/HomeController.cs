@@ -21,7 +21,7 @@ namespace PortfolioServices.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await homeBo.GetHomeBoAsync());
+            return Ok(await homeBo.GetAsync());
         }
 
         // GET api/<HomeController>/5
@@ -35,13 +35,13 @@ namespace PortfolioServices.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] HomeDto value)
         {
-            return Ok(await homeBo.CreateAsync(value));
+            return StatusCode(201, await homeBo.CreateAsync(value));
         }
 
         // PUT api/<HomeController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
-        {
+        {            
         }
 
         // DELETE api/<HomeController>/5

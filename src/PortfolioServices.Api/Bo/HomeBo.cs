@@ -19,7 +19,7 @@ namespace PortfolioServices.Api.Bo
             return await hr.AddAsync(home);
         }
 
-        public async Task<IEnumerable<HomeDto>> GetHomeBoAsync()
+        public async Task<IEnumerable<HomeDto>> GetAsync()
         {
             return await hr.GetAllAsync();
         }

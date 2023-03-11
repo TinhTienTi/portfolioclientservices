@@ -7,7 +7,7 @@ namespace PortfolioServices.Api.Bo.Interfaces
     {
         Task<HomeDto> CreateAsync(HomeDto home);
 
-        Task<IEnumerable<HomeDto>> GetHomeBoAsync();
+        Task<IEnumerable<HomeDto>> GetAsync();
 
         Task<HomeDto> GetAsync(Guid Tid);
     }

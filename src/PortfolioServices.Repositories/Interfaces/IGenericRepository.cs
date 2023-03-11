@@ -20,7 +20,7 @@ public interface IGenericRepository<TEntity, TDto>
 
     Task<IEnumerable<TDto>> GetAllAsync();
 
-    TDto? GetById(Guid id);
+    TDto GetById(Guid id);
 
     IQueryable<TAny> GetQueryable<TAny>() where TAny : class;
 
