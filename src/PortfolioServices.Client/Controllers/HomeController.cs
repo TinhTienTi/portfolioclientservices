@@ -23,6 +23,8 @@ namespace ProfolioClient.App.Controllers
 
             var data = await pb.GetHomeInfoQueryableAsync("vi");
 
+            ViewData["HomeData"] = data;
+
             return View();
         }
 

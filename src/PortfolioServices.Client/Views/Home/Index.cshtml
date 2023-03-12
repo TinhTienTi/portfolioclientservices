@@ -2,6 +2,9 @@
 @using ProfolioClient.App.Models
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
+@{
+    var homeProfile = ViewData["HomeData"] as List<PortfolioServices.Model.HomeProfileResponse>;
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,16 +46,27 @@
             <a class="logo" href="#">Meyawo</a>
         </div>
     </nav><!-- End of Page Navbar -->
-
     <!-- page header -->
     <header id="home" class="header">
         <div class="overlay"></div>
         <div class="header-content container">
-            <h1 class="header-title">
-                <span class="up">HI!</span>
-                <span class="down">I am John Doe</span>
-            </h1>
-            <p class="header-subtitle">BACKEND WEBSITE OR WEBAPP</p>
+            @foreach (var item in homeProfile)
+            {
+                <h1 class="header-title">
+                    @if (item.Category == "Up")
+                    {
+                        <span class="up">@item.Value</span>
+                    }
+                    @if (item.Category == "Down")
+                    {
+                        <span class="down">@item.Value</span>
+                    }
+                </h1>
+                @if (item.Category == "Subtitle")
+                {
+                    <p class="header-subtitle">@item.Value</p>
+                }
+            }
 
             <button class="btn btn-primary">Visit My Works</button>
         </div>
@@ -137,6 +151,6 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
- 
+
 </body>
 </html>

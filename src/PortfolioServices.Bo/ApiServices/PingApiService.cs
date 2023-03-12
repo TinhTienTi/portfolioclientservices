@@ -24,7 +24,7 @@ public class PingApiService<T> : IPingApiService<T>
         HttpResponseMessage response = await client.GetAsync(apiPath);
         if (response.IsSuccessStatusCode)
         {
-            result = JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync()); ;
+            result = JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
         }
         return result;
     }
