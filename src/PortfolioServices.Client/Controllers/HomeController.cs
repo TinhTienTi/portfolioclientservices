@@ -14,18 +14,26 @@ namespace ProfolioClient.App.Controllers
         public HomeController(ILogger<HomeController> logger, IServiceProvider serviceProvider)
         {
             _logger = logger;
+
             this.serviceProvider = serviceProvider;
         }
 
         public async Task<IActionResult> Index()
         {
-            var pb = serviceProvider.GetService<IProfileBo>();
+            try
+            {
+                var pb = serviceProvider.GetService<IProfileBo>();
 
-            var data = await pb.GetHomeInfoQueryableAsync("vi");
+                var data = await pb.GetHomeInfoQueryableAsync("vi");
 
-            ViewData["HomeData"] = data;
+                ViewData["HomeData"] = data;
 
-            return View();
+                return View();
+            }
+            catch
+            {
+                return RedirectToAction("Error");
+            }
         }
 
         public IActionResult Privacy()
