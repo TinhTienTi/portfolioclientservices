@@ -17,11 +17,24 @@ namespace PortfolioServices.Bo
             this.configuration = configuration;
         }
 
-        public async Task<IEnumerable<HomeProfileResponse>> GetHomeInfoQueryableAsync(string languageId)
+        public async Task<IEnumerable<ProfileResponseDto>> GetAboutInfoQueryableAsync(string languageId)
         {
-            var xx = serviceProvider.GetService<IPingApiService<IEnumerable<HomeProfileResponse>>>();
+            try
+            {
+                var xx = serviceProvider.GetService<IPingApiService<IEnumerable<ProfileResponseDto>>>();
 
-            IEnumerable<HomeProfileResponse> result = await xx.GetAsync(configuration["ProfileUrl:Home"]);
+                IEnumerable<ProfileResponseDto> result = await xx.GetAsync(configuration["ProfileUrl:About"]);
+
+                return result;
+            }
+            catch { throw; }
+        }
+
+        public async Task<IEnumerable<ProfileResponseDto>> GetHomeInfoQueryableAsync(string languageId)
+        {
+            var xx = serviceProvider.GetService<IPingApiService<IEnumerable<ProfileResponseDto>>>();
+
+            IEnumerable<ProfileResponseDto> result = await xx.GetAsync(configuration["ProfileUrl:Home"]);
 
             return result;
         }

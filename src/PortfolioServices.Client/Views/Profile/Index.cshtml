@@ -3,7 +3,7 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
-    var homeProfile = ViewData["HomeData"] as List<PortfolioServices.Model.HomeProfileResponse>;
+    var homeProfile = ViewData["HomeData"] as List<PortfolioServices.Model.ProfileResponseDto>;
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -36,6 +36,10 @@
                 cursor: pointer;
             }
     </style>
+
+    <script src="~/lib/jquery/jquery-3.4.1.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -147,10 +151,7 @@
         </footer>
     </div> <!-- end of page footer -->
 
-    <script src="~/lib/jquery/jquery-3.4.1.min.js"></script>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
 </body>
 </html>

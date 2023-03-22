@@ -5,13 +5,13 @@ using System.Diagnostics;
 
 namespace ProfolioClient.App.Controllers
 {
-    public class HomeController : Controller
+    public class ProfileController : Controller
     {
         private readonly IServiceProvider serviceProvider;
 
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<ProfileController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, IServiceProvider serviceProvider)
+        public ProfileController(ILogger<ProfileController> logger, IServiceProvider serviceProvider)
         {
             _logger = logger;
 
@@ -33,6 +33,23 @@ namespace ProfolioClient.App.Controllers
             catch
             {
                 return RedirectToAction("Error");
+            }
+        }
+
+        [HttpGet]
+        public async Task<JsonResult> GetAboutInfo()
+        {
+            try
+            {
+                var pb = serviceProvider.GetService<IProfileBo>();
+
+                var data = await pb.GetAboutInfoQueryableAsync("vi");
+
+                return Json(data);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { message = ex.Message });
             }
         }
 

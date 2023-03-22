@@ -3,6 +3,7 @@
     "Uri": "https://localhost:7037"
   },
   "ProfileUrl": {
-    "Home": "api/Profile" 
+    "Home": "api/Profile",
+    "About": "api/Profile/About"
   }
 }

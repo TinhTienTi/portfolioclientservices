@@ -4,7 +4,8 @@
   CreatedAt DATETIMEOFFSET,
   ModifiedAt DATETIMEOFFSET,
   [Object] VARCHAR(30),
-  [Value] NVARCHAR(MAX)
+  [Value] NVARCHAR(MAX),
+  Priority SMALLINT
 )
 GO
 
