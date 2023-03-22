@@ -7,5 +7,7 @@ namespace PortfolioServices.Bo.Interfaces
         Task<IEnumerable<ProfileResponseDto>> GetHomeInfoQueryableAsync(string languageId);
 
         Task<IEnumerable<ProfileResponseDto>> GetAboutInfoQueryableAsync(string languageId);
+
+        Task<IEnumerable<ServiceProfileResponseDto>> GetServicesInfoQueryableAsync(string languageId);
     }
 }

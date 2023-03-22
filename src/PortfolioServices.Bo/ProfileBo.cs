@@ -38,5 +38,14 @@ namespace PortfolioServices.Bo
 
             return result;
         }
+
+        public async Task<IEnumerable<ServiceProfileResponseDto>> GetServicesInfoQueryableAsync(string languageId)
+        {
+            var xx = serviceProvider.GetService<IPingApiService<IEnumerable<ServiceProfileResponseDto>>>();
+
+            IEnumerable<ServiceProfileResponseDto> result = await xx.GetAsync(configuration["ProfileUrl:Service"]);
+
+            return result;
+        }
     }
 }

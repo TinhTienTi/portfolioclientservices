@@ -53,6 +53,23 @@ namespace ProfolioClient.App.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<JsonResult> GetServiceInfo()
+        {
+            try
+            {
+                var pb = serviceProvider.GetService<IProfileBo>();
+
+                var data = await pb.GetServicesInfoQueryableAsync("vi");
+
+                return Json(data);
+            }
+            catch (Exception ex)
+            {
+                return Json(new { message = ex.Message });
+            }
+        }
+
         public IActionResult Privacy()
         {
             return View();
