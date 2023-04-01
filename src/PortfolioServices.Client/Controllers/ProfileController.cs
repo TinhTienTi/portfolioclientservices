@@ -9,12 +9,11 @@ namespace ProfolioClient.App.Controllers
     {
         private readonly IServiceProvider serviceProvider;
 
-        private readonly ILogger<ProfileController> _logger;
-
+        private readonly ILogger<ProfileController> _logger; 
+        
         public ProfileController(ILogger<ProfileController> logger, IServiceProvider serviceProvider)
         {
             _logger = logger;
-
             this.serviceProvider = serviceProvider;
         }
 
@@ -24,32 +23,19 @@ namespace ProfolioClient.App.Controllers
             {
                 var pb = serviceProvider.GetService<IProfileBo>();
 
-                var data = await pb.GetHomeInfoQueryableAsync("vi");
+                var data = pb.GetHomeInfoQueryableAsync("vi");
+                var services = pb.GetServicesInfoQueryableAsync("vi");
+                var about = pb.GetAboutInfoQueryableAsync("vi");
 
-                ViewData["HomeData"] = data;
+                ViewData["HomeData"] = await data;
+                ViewData["ServiceData"] = await services;
+                ViewData["AboutData"] = await about;
 
                 return View();
             }
             catch
             {
                 return RedirectToAction("Error");
-            }
-        }
-
-        [HttpGet]
-        public async Task<JsonResult> GetAboutInfo()
-        {
-            try
-            {
-                var pb = serviceProvider.GetService<IProfileBo>();
-
-                var data = await pb.GetAboutInfoQueryableAsync("vi");
-
-                return Json(data);
-            }
-            catch (Exception ex)
-            {
-                return Json(new { message = ex.Message });
             }
         }
 

@@ -3,7 +3,10 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
-    var homeProfile = ViewData["HomeData"] as List<PortfolioServices.Model.ProfileResponseDto>;
+    var homeProfileData = ViewData["HomeData"] as List<PortfolioServices.Model.ProfileResponseDto>;
+    var serviceProfileData = ViewData["ServiceData"] as List<PortfolioServices.Model.ServiceProfileResponseDto>;
+    var aboutProfileData = ViewData["AboutData"] as List<PortfolioServices.Model.ProfileResponseDto>;
+
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -54,7 +57,7 @@
     <header id="home" class="header">
         <div class="overlay"></div>
         <div class="header-content container">
-            @foreach (var item in homeProfile)
+            @foreach (var item in homeProfileData)
             {
                 <h1 class="header-title">
                     @if (item.Category == "Up")
@@ -77,15 +80,62 @@
     </header><!-- end of page header -->
     <!-- about section -->
     <section class="section pt-0" id="about">
-        @{
-            await Html.RenderPartialAsync("_About");
-        }
+        <!-- container -->
+        <div class="container header-content ">
+            <!-- about wrapper -->
+            <div class="about">
+                <div class="about-img-holder">
+                    @for (int i = 0; i < aboutProfileData.Count; i++)
+                    {
+                        if (aboutProfileData[i].Category == "Image"){
+                            <img src="@aboutProfileData[i].ImgUrl" asp-append-version="true" class="about-img" />
+                            break;
+                        }
+                    }
+                </div>
+                <div class="about-caption">
+                    @foreach (var item in aboutProfileData)
+                    {
+                        @if (item.Category == "Subtitle")
+                        {
+                            <p class="section-subtitle">@item.Value</p>
+                        }
+                        @if (item.Category == "Title")
+                        {
+                            <h2 class="section-title mb-3">@item.Value</h2>
+                        }
+                        @if (item.Category == "Description")
+                        {
+                            <p id="about_description_id">@item.Value</p>
+                        }
+                    }
+                    <button class="btn-rounded btn btn-outline-primary mt-4">Download CV</button>
+                </div>
+                <!-- end of about wrapper -->
+            </div>
+        </div><!-- end of container -->
     </section> <!-- end of about section -->
     <!-- service section -->
     <section class="section" id="service">
-        @{
-            await Html.RenderPartialAsync("_Service");
-        }
+        <div class="container text-center">
+            <p class="section-subtitle">What I Do ?</p>
+            <h6 class="section-title mb-6">Service</h6>
+            <!-- row -->
+            <div class="row">
+                @foreach (var item in serviceProfileData)
+                {
+                    <div class="col-md-6 col-lg-3">
+                        <div class="service-card">
+                            <div class="body">
+                                <img src="@item.ImgUrl" asp-append-version="true" class="icon" />
+                                <h6 class="title">@item.Title</h6>
+                                <p class="subtitle">@item.SubTitle</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div><!-- end of row -->
+        </div>
     </section><!-- end of service section -->
     <!-- portfolio section -->
     <section class="section" id="portfolio">
