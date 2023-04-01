@@ -3,9 +3,10 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
-    var homeProfileData = ViewData["HomeData"] as List<PortfolioServices.Model.ProfileResponseDto>;
-    var serviceProfileData = ViewData["ServiceData"] as List<PortfolioServices.Model.ServiceProfileResponseDto>;
-    var aboutProfileData = ViewData["AboutData"] as List<PortfolioServices.Model.ProfileResponseDto>;
+    var homeProfileData = ViewData["HomeData"] as List<PortfolioServices.Dto.ProfileResponseDto>;
+    var serviceProfileData = ViewData["ServiceData"] as List<PortfolioServices.Dto.ServiceProfileResponseDto>;
+    var aboutProfileData = ViewData["AboutData"] as List<PortfolioServices.Dto.ProfileResponseDto>;
+    var clientProfileData = ViewData["ClientData"] as List<PortfolioServices.Dto.ClientProfileResponseDto>;
 
 }
 <!DOCTYPE html>
@@ -46,13 +47,6 @@
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-
-    <!-- Page Navbar -->
-    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
-        <div class="container">
-            <a class="logo" href="#">Meyawo</a>
-        </div>
-    </nav><!-- End of Page Navbar -->
     <!-- page header -->
     <header id="home" class="header">
         <div class="overlay"></div>
@@ -87,7 +81,8 @@
                 <div class="about-img-holder">
                     @for (int i = 0; i < aboutProfileData.Count; i++)
                     {
-                        if (aboutProfileData[i].Category == "Image"){
+                        if (aboutProfileData[i].Category == "Image")
+                        {
                             <img src="@aboutProfileData[i].ImgUrl" asp-append-version="true" class="about-img" />
                             break;
                         }
@@ -163,9 +158,29 @@
     </section> <!-- end of section -->
     <!-- testimonial section -->
     <section class="section" id="testmonial">
-        @{
-            await Html.RenderPartialAsync("_Client");
-        }
+        <div class="container text-center">
+            <p class="section-subtitle">What Think Client About Me ?</p>
+            <h6 class="section-title mb-6">Testmonial</h6>
+
+            <!-- row -->
+            <div class="row">
+                @foreach (var item in clientProfileData)
+                {
+                    <div class="col-md-6">
+                        <div class="testimonial-card">
+                            <div class="testimonial-card-img-holder">
+                                <img src="@item.ImageUrl" asp-append-version="true" class="testimonial-card-img">
+                            </div>
+                            <div class="testimonial-card-body">
+                                <p class="testimonial-card-subtitle">@item.Comment</p>
+                                <h6 class="testimonial-card-title">@item.Client</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            </div>
+        </div> <!-- end of container -->
     </section> <!-- end of testimonial section -->
     <!-- blog section -->
     <section class="section" id="blog">

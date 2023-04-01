@@ -1,4 +1,4 @@
-﻿namespace PortfolioServices.Model
+﻿namespace PortfolioServices.Dto
 {
     public class ProfileResponseDto
     {

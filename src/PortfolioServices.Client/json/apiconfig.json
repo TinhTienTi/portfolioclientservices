@@ -5,6 +5,7 @@
   "ProfileUrl": {
     "Home": "api/Profile",
     "About": "api/Profile/About",
-    "Service": "api/Profile/Service"
+    "Service": "api/Profile/Service",
+    "Client": "api/Profile/Client"
   }
 }

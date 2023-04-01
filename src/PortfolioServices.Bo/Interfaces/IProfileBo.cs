@@ -1,4 +1,4 @@
-﻿using PortfolioServices.Model;
+﻿using PortfolioServices.Dto;
 
 namespace PortfolioServices.Bo.Interfaces
 {
@@ -7,6 +7,8 @@ namespace PortfolioServices.Bo.Interfaces
         Task<IEnumerable<ProfileResponseDto>> GetHomeInfoQueryableAsync(string languageId);
 
         Task<IEnumerable<ProfileResponseDto>> GetAboutInfoQueryableAsync(string languageId);
+
+        Task<IEnumerable<ClientProfileResponseDto>> GetClientInfoQueryableAsync(string languageId);
 
         Task<IEnumerable<ServiceProfileResponseDto>> GetServicesInfoQueryableAsync(string languageId);
     }

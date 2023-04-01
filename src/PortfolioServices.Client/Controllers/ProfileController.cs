@@ -26,10 +26,12 @@ namespace ProfolioClient.App.Controllers
                 var data = pb.GetHomeInfoQueryableAsync("vi");
                 var services = pb.GetServicesInfoQueryableAsync("vi");
                 var about = pb.GetAboutInfoQueryableAsync("vi");
+                var client = pb.GetClientInfoQueryableAsync("vi");
 
                 ViewData["HomeData"] = await data;
                 ViewData["ServiceData"] = await services;
                 ViewData["AboutData"] = await about;
+                ViewData["ClientData"] = await client;
 
                 return View();
             }
