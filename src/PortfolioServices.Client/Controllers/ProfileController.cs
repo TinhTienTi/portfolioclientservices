@@ -26,13 +26,13 @@ namespace ProfolioClient.App.Controllers
                 var data = pb.GetHomeInfoAsync("vi");
                 var services = pb.GetServicesInfoAsync("vi");
                 var about = pb.GetAboutInfoAsync("vi");
-                var client = pb.GetClientInfoAsync("vi");
+                //var client = pb.GetClientInfoAsync("vi");
                 var portfolio = pb.GetPortfolioInfoAsync("vi");
 
                 ViewData["HomeData"] = await data;
                 ViewData["ServiceData"] = await services;
                 ViewData["AboutData"] = await about;
-                ViewData["ClientData"] = await client;
+                //ViewData["ClientData"] = await client;
                 ViewData["PortfolioData"] = await portfolio;
 
                 return View();
@@ -66,7 +66,7 @@ namespace ProfolioClient.App.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error(int code, string message)
+        public IActionResult Error()
         {       
             return View();
         }
