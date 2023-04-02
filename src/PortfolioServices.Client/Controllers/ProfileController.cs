@@ -9,8 +9,8 @@ namespace ProfolioClient.App.Controllers
     {
         private readonly IServiceProvider serviceProvider;
 
-        private readonly ILogger<ProfileController> _logger; 
-        
+        private readonly ILogger<ProfileController> _logger;
+
         public ProfileController(ILogger<ProfileController> logger, IServiceProvider serviceProvider)
         {
             _logger = logger;
@@ -37,9 +37,9 @@ namespace ProfolioClient.App.Controllers
 
                 return View();
             }
-            catch
+            catch (Exception ex)
             {
-                return RedirectToAction("Error");
+                return RedirectToAction("Error", new { code = 500, message = ex.Message });
             }
         }
 
@@ -66,9 +66,9 @@ namespace ProfolioClient.App.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        public IActionResult Error(int code, string message)
+        {       
+            return View();
         }
     }
 }
