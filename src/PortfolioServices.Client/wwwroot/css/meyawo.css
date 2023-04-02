@@ -11133,7 +11133,7 @@ p {
 
 .service-card {
   position: relative;
-  min-height: 260px;
+  min-height: 310px;
   border: 1px solid #dee2e6;
   overflow: hidden;
   border-radius: 3px;
@@ -11184,6 +11184,7 @@ p {
   bottom: 7px;
   opacity: 1;
   visibility: visible;
+  top: 120px;
 }
 
 /*/ portfolio wrapper */
