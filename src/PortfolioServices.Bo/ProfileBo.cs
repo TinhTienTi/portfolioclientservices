@@ -17,7 +17,7 @@ namespace PortfolioServices.Bo
             this.configuration = configuration;
         }
 
-        public async Task<IEnumerable<ProfileResponseDto>> GetAboutInfoQueryableAsync(string languageId)
+        public async Task<IEnumerable<ProfileResponseDto>> GetAboutInfoAsync(string languageId)
         {
             try
             {
@@ -30,7 +30,7 @@ namespace PortfolioServices.Bo
             catch { throw; }
         }
 
-        public async Task<IEnumerable<ClientProfileResponseDto>> GetClientInfoQueryableAsync(string languageId)
+        public async Task<IEnumerable<ClientProfileResponseDto>> GetClientInfoAsync(string languageId)
         {
             try
             {
@@ -43,7 +43,7 @@ namespace PortfolioServices.Bo
             catch { throw; }
         }
 
-        public async Task<IEnumerable<ProfileResponseDto>> GetHomeInfoQueryableAsync(string languageId)
+        public async Task<IEnumerable<ProfileResponseDto>> GetHomeInfoAsync(string languageId)
         {
             var xx = serviceProvider.GetService<IPingApiService<IEnumerable<ProfileResponseDto>>>();
 
@@ -52,7 +52,16 @@ namespace PortfolioServices.Bo
             return result;
         }
 
-        public async Task<IEnumerable<ServiceProfileResponseDto>> GetServicesInfoQueryableAsync(string languageId)
+        public async Task<IEnumerable<PortfolioProfileResponseDto>> GetPortfolioInfoAsync(string languageId)
+        {
+            var xx = serviceProvider.GetService<IPingApiService<IEnumerable<PortfolioProfileResponseDto>>>();
+
+            IEnumerable<PortfolioProfileResponseDto> result = await xx.GetAsync(configuration["ProfileUrl:Portfolio"]);
+
+            return result;
+        }
+
+        public async Task<IEnumerable<ServiceProfileResponseDto>> GetServicesInfoAsync(string languageId)
         {
             var xx = serviceProvider.GetService<IPingApiService<IEnumerable<ServiceProfileResponseDto>>>();
 

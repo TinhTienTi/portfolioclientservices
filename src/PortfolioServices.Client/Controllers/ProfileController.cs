@@ -23,15 +23,17 @@ namespace ProfolioClient.App.Controllers
             {
                 var pb = serviceProvider.GetService<IProfileBo>();
 
-                var data = pb.GetHomeInfoQueryableAsync("vi");
-                var services = pb.GetServicesInfoQueryableAsync("vi");
-                var about = pb.GetAboutInfoQueryableAsync("vi");
-                var client = pb.GetClientInfoQueryableAsync("vi");
+                var data = pb.GetHomeInfoAsync("vi");
+                var services = pb.GetServicesInfoAsync("vi");
+                var about = pb.GetAboutInfoAsync("vi");
+                var client = pb.GetClientInfoAsync("vi");
+                var portfolio = pb.GetPortfolioInfoAsync("vi");
 
                 ViewData["HomeData"] = await data;
                 ViewData["ServiceData"] = await services;
                 ViewData["AboutData"] = await about;
                 ViewData["ClientData"] = await client;
+                ViewData["PortfolioData"] = await portfolio;
 
                 return View();
             }
@@ -48,7 +50,7 @@ namespace ProfolioClient.App.Controllers
             {
                 var pb = serviceProvider.GetService<IProfileBo>();
 
-                var data = await pb.GetServicesInfoQueryableAsync("vi");
+                var data = await pb.GetServicesInfoAsync("vi");
 
                 return Json(data);
             }

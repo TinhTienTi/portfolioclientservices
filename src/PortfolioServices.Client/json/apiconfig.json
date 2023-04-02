@@ -6,6 +6,7 @@
     "Home": "api/Profile",
     "About": "api/Profile/About",
     "Service": "api/Profile/Service",
-    "Client": "api/Profile/Client"
+    "Client": "api/Profile/Client",
+    "Portfolio": "api/Profile/Portfolio"
   }
 }

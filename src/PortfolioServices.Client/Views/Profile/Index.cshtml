@@ -7,7 +7,7 @@
     var serviceProfileData = ViewData["ServiceData"] as List<PortfolioServices.Dto.ServiceProfileResponseDto>;
     var aboutProfileData = ViewData["AboutData"] as List<PortfolioServices.Dto.ProfileResponseDto>;
     var clientProfileData = ViewData["ClientData"] as List<PortfolioServices.Dto.ClientProfileResponseDto>;
-
+    var portfolioProfileData = ViewData["PortfolioData"] as List<PortfolioServices.Dto.PortfolioProfileResponseDto>;
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -134,9 +134,27 @@
     </section><!-- end of service section -->
     <!-- portfolio section -->
     <section class="section" id="portfolio">
-        @{
-            await Html.RenderPartialAsync("_Portfolio");
-        }
+        <div class="container text-center">
+            <p class="section-subtitle">What I Did ?</p>
+            <h6 class="section-title mb-6">Portfolio</h6>
+            <!-- row -->
+            <div class="row">
+                @foreach (var item in portfolioProfileData)
+                {
+                    <div class="col-md-4">
+                        <a href="#" class="portfolio-card">
+                            <img src="@item.ImgUrl" asp-append-version="true" class="img-responsive rounde" />
+                            <span class="portfolio-card-overlay">
+                                <span class="portfolio-card-caption">
+                                    <h4>@item.Title</h4>
+                                    <p class="font-weight-normal">@item.SubTitle</p>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                }                        
+            </div><!-- end of row -->
+        </div><!-- end of container -->
     </section>
     <!-- end
     </section> <!-- end of portfolio section -->
@@ -169,7 +187,7 @@
                     <div class="col-md-6">
                         <div class="testimonial-card">
                             <div class="testimonial-card-img-holder">
-                                <img src="@item.ImageUrl" asp-append-version="true" class="testimonial-card-img">
+                                <img src="@item.ImgUrl" asp-append-version="true" class="testimonial-card-img">
                             </div>
                             <div class="testimonial-card-body">
                                 <p class="testimonial-card-subtitle">@item.Comment</p>
